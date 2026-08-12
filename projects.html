@@ -364,10 +364,18 @@
   .dash-panel{padding:16px}
   .error-box{padding:34px 20px}
   .error-box h1{font-size:1.8rem}
+
+  .mobile-drawer {
+        width: 100%;
+        max-width: 100%;
+        right: 0;
+        left: 0;
+        padding: 24px 20px;
+    }
   }
 
   .logo img {
-    width: 150px;
+    width: 200px;
     height: auto;
     object-fit: contain;
   }
@@ -390,6 +398,251 @@
 .newsletter input.invalid{
   border-color:var(--danger);
   box-shadow:0 0 0 3px rgba(248,113,113,.09);
+}
+
+/* Environmental Impact Hover Effects */
+
+.impact-box {
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    padding: 30px 26px;
+
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.06),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Animated green glow */
+.impact-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--lime);
+
+    transition: left 0.45s ease;
+}
+
+/* Hover */
+.impact-box:hover {
+    transform: translateY(-8px);
+    border-color: rgba(163, 230, 53, 0.4);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(163, 230, 53, 0.09),
+            rgba(255, 255, 255, 0.025)
+        );
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.25),
+        0 0 25px rgba(163, 230, 53, 0.08);
+}
+
+.impact-box:hover::before {
+    left: 0;
+}
+
+/* Number */
+.impact-box b {
+    display: block;
+    font-size: 2.4rem;
+    color: var(--lime);
+
+    transition:
+        transform 0.35s ease,
+        text-shadow 0.35s ease;
+}
+
+.impact-box:hover b {
+    transform: scale(1.08);
+    text-shadow:
+        0 0 20px rgba(163, 230, 53, 0.35);
+}
+
+/* Description */
+.impact-box span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.impact-box:hover span {
+    color: #d2ddd6;
+    transform: translateX(4px);
+}
+
+/* Project Stats Hover Effect */
+
+.stats .stat {
+    position: relative;
+    padding: 24px 20px;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    overflow: hidden;
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+/* Animated bottom line */
+.stats .stat::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 0;
+    height: 2px;
+    background: var(--lime);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+/* Hover */
+.stats .stat:hover {
+    transform: translateY(-8px);
+    background: rgba(163, 230, 53, 0.06);
+    border-color: rgba(163, 230, 53, 0.3);
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.22),
+        0 0 25px rgba(163, 230, 53, 0.06);
+}
+
+.stats .stat:hover::after {
+    transform: scaleX(1);
+}
+
+/* Number */
+.stats .stat b {
+    display: block;
+    color: var(--cream);
+    transition:
+        color 0.3s ease,
+        transform 0.35s ease,
+        text-shadow 0.35s ease;
+}
+
+.stats .stat:hover b {
+    color: var(--lime);
+    transform: scale(1.08);
+    text-shadow: 0 0 22px rgba(163, 230, 53, 0.35);
+}
+
+/* Description */
+.stats .stat > span {
+    display: block;
+    color: var(--muted);
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.stats .stat:hover > span {
+    color: #d2ddd6;
+    transform: translateX(4px);
+}
+
+.indicator {
+    position: relative;
+    padding: 18px 16px;
+    border: 1px solid transparent;
+    border-radius: 14px;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+/* Green glow line */
+.indicator::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: var(--lime);
+    border-radius: 0 0 5px 5px;
+    transition: height 0.35s ease;
+}
+
+/* Hover effect */
+.indicator:hover {
+    transform: translateX(8px);
+    background: rgba(163, 230, 53, 0.07);
+    border-color: rgba(163, 230, 53, 0.28);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.indicator:hover::before {
+    height: 100%;
+}
+
+/* Icon */
+.indicator i {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(163, 230, 53, 0.25);
+    border-radius: 10px;
+    background: rgba(163, 230, 53, 0.06);
+    color: var(--lime);
+    font-style: normal;
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.indicator:hover i {
+    transform: rotate(8deg) scale(1.12);
+    background: rgba(163, 230, 53, 0.14);
+    box-shadow: 0 0 20px rgba(163, 230, 53, 0.18);
+}
+
+/* Title */
+.indicator b {
+    transition: color 0.3s ease;
+}
+
+.indicator:hover b {
+    color: var(--lime);
+}
+
+/* Description */
+.indicator span {
+    transition: color 0.3s ease;
+}
+
+.indicator:hover span {
+    color: #c7d4cc;
 }
   </style>
 </head>
@@ -577,7 +830,7 @@
 </div>
         </div>
       </div>
-      <div class="footer-bottom"><span>© 2025 Renewable Energy. Built for a cleaner tomorrow.</span>
+      <div class="footer-bottom"><span>© 2025 Stackly Renewable Energy. Built for a cleaner tomorrow.</span>
         <div><a href="404.html">Privacy</a><a href="404.html"> Policy</a><a href="404.html">Terms</a></div>
       </div>
     </div>

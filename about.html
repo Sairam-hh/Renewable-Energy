@@ -30,7 +30,7 @@
   .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(163,230,53,.18)}
   .btn-ghost{border-color:var(--line);background:rgba(255,255,255,.03);color:var(--cream)}
   .btn-ghost:hover{border-color:rgba(163,230,53,.55);color:var(--lime);transform:translateY(-3px)}
-  .site-header{position:fixed;top:0;left:0;right:0;z-index:20;background:linear-gradient(180deg,rgba(5,11,9,.92),rgba(5,11,9,.48),transparent);padding:20px 0}
+  .site-header{position:fixed;top:0;left:0;right:0;z-index:20;background:linear-gradient(180deg,rgba(5,11,9,.92),rgba(5,11,9,.48),transparent);padding:20px 0;    background-color:var(--ink);}
   .nav{height:52px;display:flex;align-items:center;justify-content:space-between;gap:24px}
   .brand{display:flex;align-items:center;gap:11px;min-width:175px}
   /* .brand img{width:42px;height:42px;object-fit:contain;filter:saturate(.65) hue-rotate(65deg)} */
@@ -481,6 +481,24 @@
 .indicator:hover span {
     color: #c7d4cc;
 }
+
+.team-card .portrait {
+    height: 220px;
+    background: var(--deep);
+    overflow: hidden;
+}
+
+.team-card .portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .6s ease;
+}
+
+.team-card:hover .portrait img {
+    transform: scale(1.06);
+}
   </style>
 </head>
 
@@ -545,41 +563,60 @@
       </div>
     </section>
     <section class="section">
-      <div class="wrap">
+    <div class="wrap">
+
         <div class="section-head reveal">
-          <div>
-            <div class="eyebrow">The people behind the power</div>
-            <h2>Small enough to care. Global enough to deliver.</h2>
-          </div>
+            <div>
+                <div class="eyebrow">The people behind the power</div>
+                <h2>Small enough to care. Global enough to deliver.</h2>
+            </div>
         </div>
+
         <div class="team-grid reveal">
-          <div class="team-card">
-            <div class="portrait">AM</div>
-            <div>
-              <h3>Arjun Mehta</h3><small>Chief Executive Officer</small>
+
+            <div class="team-card">
+                <div class="portrait">
+                    <img src="./gallery/arjun-mehta.webp" alt="Arjun Mehta">
+                </div>
+                <div>
+                    <h3>Arjun Mehta</h3>
+                    <small>Chief Executive Officer</small>
+                </div>
             </div>
-          </div>
-          <div class="team-card">
-            <div class="portrait">LN</div>
-            <div>
-              <h3>Lina Novak</h3><small>Chief Technology Officer</small>
+
+            <div class="team-card">
+                <div class="portrait">
+                    <img src="https://thumbs.dreamstime.com/b/happy-woman-portrait-data-analyst-confidence-office-software-management-female-person-employee-programmer-smile-440436268.jpg" alt="Lina Novak">
+                </div>
+                <div>
+                    <h3>Lina Novak</h3>
+                    <small>Chief Technology Officer</small>
+                </div>
             </div>
-          </div>
-          <div class="team-card">
-            <div class="portrait">OS</div>
-            <div>
-              <h3>Owen Shaw</h3><small>Global Projects</small>
+
+            <div class="team-card">
+                <div class="portrait">
+                    <img src="./gallery/Owen Shaw.webp" alt="Owen Shaw">
+                </div>
+                <div>
+                    <h3>Owen Shaw</h3>
+                    <small>Global Projects</small>
+                </div>
             </div>
-          </div>
-          <div class="team-card">
-            <div class="portrait">EK</div>
-            <div>
-              <h3>Elena Kim</h3><small>Impact & Sustainability</small>
+
+            <div class="team-card">
+                <div class="portrait">
+                    <img src="./gallery/Elena Kim.webp" alt="Elena Kim">
+                </div>
+                <div>
+                    <h3>Elena Kim</h3>
+                    <small>Impact &amp; Sustainability</small>
+                </div>
             </div>
-          </div>
+
         </div>
-      </div>
-    </section>
+    </div>
+</section>
     <section class="section">
       <div class="wrap split reveal">
         <div class="story-copy">
